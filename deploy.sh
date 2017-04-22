@@ -1,8 +1,8 @@
 #!/bin/sh
 
-echo "Deploying data..."
-sleep 30s
-echo "Migrating DB..."
-sleep 10s
+echo "Copying static files to web root..."
+cp -r ./* /var/www/
+echo "Update sha hash..."
+git rev-parse HEAD > /var/www/git-sha
 echo "All done!"
 
